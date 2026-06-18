@@ -6,6 +6,8 @@ Its public handles follow the same vocabulary as the Rust and Python SDKs:
 
 [Examples available](https://rmux.io/docs/examples/#/quickstart)
 
+[npm package](https://www.npmjs.com/package/@rmux/sdk)
+
 ## Installation
 
 ```bash
