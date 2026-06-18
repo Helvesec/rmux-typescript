@@ -1,0 +1,57 @@
+{
+  "name": "@rmux/sdk",
+  "version": "0.6.5",
+  "description": "TypeScript SDK for RMUX 0.6.x.",
+  "type": "module",
+  "license": "MIT OR Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Helvesec/rmux-typescript.git"
+  },
+  "homepage": "https://rmux.io",
+  "bugs": {
+    "url": "https://github.com/Helvesec/rmux-typescript/issues"
+  },
+  "keywords": [
+    "terminal",
+    "multiplexer",
+    "rmux",
+    "sdk"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE-MIT",
+    "LICENSE-APACHE"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "npm run typecheck && npm test",
+    "check:prod": "npm run typecheck && npm run test:prod",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run check:prod",
+    "test:prod": "npm run build && node test/require-real-rmux.mjs && node --test test/*.test.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@types/node": "^24.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0"
+  }
+}
