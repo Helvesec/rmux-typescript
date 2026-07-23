@@ -56,3 +56,9 @@ if (run.returnCode !== 0) {
   throw new Error(run.stderr);
 }
 ```
+
+## Projects
+
+- **[opencode-rmux](https://github.com/shiyouming/opencode-rmux)** — An Opencode plugin
+  that bridges AI coding agent sessions with RMUX. Provides real-time subagent pane
+  management and 9 AI-driven RMUX control tools. ([npm](https://www.npmjs.com/package/opencode-rmux))
